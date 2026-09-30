@@ -1,11 +1,13 @@
 services:
   - type: web
     name: taskflow-api
-    env: docker
+    runtime: docker
     dockerfilePath: ./Dockerfile
+    dockerContext: .
     plan: free
     region: singapore
     autoDeploy: true
+    healthCheckPath: /health
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
