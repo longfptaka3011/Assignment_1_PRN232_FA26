@@ -229,6 +229,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapHealthChecks("/health");
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.Run();
 
