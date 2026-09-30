@@ -38,6 +38,7 @@ export function Workspace() {
   const [createIssueInitialSprintId, setCreateIssueInitialSprintId] = useState<string | undefined>();
   const [isCreateSprintOpen, setIsCreateSprintOpen] = useState(false);
   const [isCsvModalOpen, setIsCsvModalOpen] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [resolutionModalData, setResolutionModalData] = useState<{
     issue: Issue;
     targetStatusId: string;
@@ -45,36 +46,40 @@ export function Workspace() {
   } | null>(null);
 
   // Initial Load
-  useEffect(() => {
-    async function loadInitialData() {
-      setLoading(true);
-      try {
-        const projs = await api.getProjects();
-        setProjects(projs);
+  const loadInitialData = async () => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const projs = await api.getProjects();
+      setProjects(projs);
 
-        if (projs.length > 0) {
-          const detail = await api.getProjectByKey(projs[0].key);
-          setCurrentProject(detail);
+      if (projs.length > 0) {
+        const detail = await api.getProjectByKey(projs[0].key);
+        setCurrentProject(detail);
 
-          const [sprintList, issueList, notifList, transitions] = await Promise.all([
-            api.getSprints(detail.id),
-            api.getIssues(detail.id),
-            api.getNotifications(),
-            api.getWorkflowTransitions(detail.id)
-          ]);
+        const [sprintList, issueList, notifList, transitions] = await Promise.all([
+          api.getSprints(detail.id),
+          api.getIssues(detail.id),
+          api.getNotifications(),
+          api.getWorkflowTransitions(detail.id)
+        ]);
 
-          setSprints(sprintList);
-          setIssues(issueList);
-          setNotifications(notifList);
-          setWorkflowTransitions(transitions);
-        }
-      } catch (err) {
-        console.error('Failed to load TaskFlow data:', err);
-      } finally {
-        setLoading(false);
+        setSprints(sprintList);
+        setIssues(issueList);
+        setNotifications(notifList);
+        setWorkflowTransitions(transitions);
+      } else {
+        setLoadError('Không tìm thấy dự án nào trong hệ thống. Đang tải lại...');
       }
+    } catch (err: any) {
+      console.error('Failed to load TaskFlow data:', err);
+      setLoadError(err.message || 'Không thể kết nối máy chủ API (Render có thể đang khởi động từ chế độ ngủ). Vui lòng thử lại sau giây lát.');
+    } finally {
+      setLoading(false);
     }
+  };
 
+  useEffect(() => {
     loadInitialData();
   }, []);
 
@@ -297,11 +302,34 @@ export function Workspace() {
 
   const activeSprint = sprints.find(s => s.status === 'Active');
 
-  if (loading || !currentProject) {
+  if (loading) {
     return (
       <div className="loading-screen" id="app-loading-screen">
         <div className="loading-spinner" />
-        <p className="loading-text">Loading TaskFlow Workspace...</p>
+        <p className="loading-text">Đang kết nối TaskFlow Workspace...</p>
+      </div>
+    );
+  }
+
+  if (loadError || !currentProject) {
+    return (
+      <div className="loading-screen" id="app-loading-screen" style={{ padding: '24px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '440px', margin: '0 auto', background: 'var(--bg-secondary)', padding: '28px', borderRadius: '16px', border: '1px solid var(--border-color)' }}>
+          <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚡</div>
+          <h2 style={{ fontSize: '18px', fontWeight: '700', margin: '0 0 8px 0', color: 'var(--text-primary)' }}>
+            Kết Nối Máy Chủ API
+          </h2>
+          <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', margin: '0 0 20px 0' }}>
+            {loadError || 'Máy chủ Render có thể cần khoảng 20-30 giây để thức dậy từ chế độ ngủ (Sleep mode). Vui lòng nhấn nút bên dưới để tải dữ liệu.'}
+          </p>
+          <button
+            onClick={loadInitialData}
+            className="btn btn-primary"
+            style={{ padding: '10px 24px', borderRadius: '8px', cursor: 'pointer', fontWeight: '600' }}
+          >
+            Thử Lại Ngay (Retry)
+          </button>
+        </div>
       </div>
     );
   }
