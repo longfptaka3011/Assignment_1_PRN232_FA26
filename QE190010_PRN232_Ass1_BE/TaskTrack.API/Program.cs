@@ -11,10 +11,17 @@ AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load .env file in Development
-if (builder.Environment.IsDevelopment())
+// Load .env file
+var possibleEnvPaths = new[]
 {
-    var envPath = Path.Combine(Directory.GetCurrentDirectory(), "..", ".env");
+    Path.Combine(Directory.GetCurrentDirectory(), ".env"),
+    Path.Combine(Directory.GetCurrentDirectory(), "..", ".env"),
+    Path.Combine(AppContext.BaseDirectory, ".env"),
+    Path.Combine(AppContext.BaseDirectory, "..", "..", "..", ".env")
+};
+
+foreach (var envPath in possibleEnvPaths)
+{
     if (File.Exists(envPath))
     {
         foreach (var line in File.ReadAllLines(envPath))
@@ -25,6 +32,7 @@ if (builder.Environment.IsDevelopment())
                 Environment.SetEnvironmentVariable(parts[0].Trim(), parts[1].Trim());
             }
         }
+        break;
     }
 }
 
