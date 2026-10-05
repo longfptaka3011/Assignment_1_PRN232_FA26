@@ -44,12 +44,29 @@ if (!string.IsNullOrEmpty(connectionString) && (connectionString.StartsWith("pos
     // Parse DATABASE_URL (Render format)
     var uri = new Uri(connectionString);
     var userInfo = uri.UserInfo.Split(':');
+    var user = userInfo.Length > 0 ? Uri.UnescapeDataString(userInfo[0]) : "";
+    var pass = userInfo.Length > 1 ? Uri.UnescapeDataString(userInfo[1]) : "";
+    var host = uri.Host;
+    var port = uri.Port > 0 ? uri.Port : 5432;
+
+    // Supabase direct host (db.[ref].supabase.co) only supports IPv6.
+    // Render free tier only supports IPv4 outbound. Route automatically through Supabase IPv4 pooler.
+    if (host.EndsWith(".supabase.co") && host.StartsWith("db."))
+    {
+        var projectRef = host.Substring(3, host.IndexOf(".supabase.co") - 3);
+        host = "aws-0-ap-northeast-2.pooler.supabase.com";
+        if (!user.Contains('.'))
+        {
+            user = $"{user}.{projectRef}";
+        }
+    }
+
     var npgsqlBuilder = new NpgsqlConnectionStringBuilder
     {
-        Host = uri.Host,
-        Port = uri.Port > 0 ? uri.Port : 5432,
-        Username = userInfo.Length > 0 ? userInfo[0] : "",
-        Password = userInfo.Length > 1 ? userInfo[1] : "",
+        Host = host,
+        Port = port,
+        Username = user,
+        Password = pass,
         Database = uri.AbsolutePath.TrimStart('/'),
         SslMode = SslMode.Require,
         TrustServerCertificate = true
@@ -148,12 +165,13 @@ app.MapGet("/health", async (TaskTrackDbContext db) =>
 {
     try
     {
-        var canConnect = await db.Database.CanConnectAsync();
-        return Results.Ok(new { status = "Healthy", databaseConnected = canConnect, timestamp = DateTime.UtcNow });
+        using var conn = db.Database.GetDbConnection();
+        await conn.OpenAsync();
+        return Results.Ok(new { status = "Healthy", databaseConnected = true, version = "1.0.1", timestamp = DateTime.UtcNow });
     }
     catch (Exception ex)
     {
-        return Results.Ok(new { status = "Degraded", databaseError = ex.Message, timestamp = DateTime.UtcNow });
+        return Results.Ok(new { status = "Degraded", databaseConnected = false, version = "1.0.1", databaseError = ex.Message, inner = ex.InnerException?.Message, timestamp = DateTime.UtcNow });
     }
 });
 

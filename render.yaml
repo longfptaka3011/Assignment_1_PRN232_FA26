@@ -11,4 +11,4 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: DATABASE_URL
-        value: postgresql://postgres:PRN232BaoLong2026@db.nrntxrhhcnmpjxstrrpy.supabase.co:5432/postgres
+        value: postgresql://postgres.nrntxrhhcnmpjxstrrpy:PRN232BaoLong2026@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres
