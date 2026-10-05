@@ -1,0 +1,43 @@
+# Build and Output Directories
+bin/
+obj/
+dist/
+build/
+out/
+node_modules/
+
+# User-specific files & IDEs
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosv
+*.suo
+*.userprefs
+
+# Environment Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Temporary & Archive Files
+*.zip
+~$*.docx
+*.tmp
+*.log
+*.swp
+.DS_Store
+Thumbs.db
+
+# Documents, Database Scripts & Duplicate Solution Files
+*.doc
+*.docx
+*.slnx
+!TaskManagementDB_Postgres*.sql
+
+# Agents & AI configs
+.agents/
+

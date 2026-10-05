@@ -1,0 +1,53 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  backend-ci:
+    name: Backend (.NET) CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+          dotnet-quality: 'preview'
+
+      - name: Restore dependencies
+        run: dotnet restore QE190010_PRN232_Ass1_BE/QE190010_PRN232_Ass1_BE.sln
+
+      - name: Build backend solution
+        run: dotnet build QE190010_PRN232_Ass1_BE/QE190010_PRN232_Ass1_BE.sln --no-restore --configuration Release
+
+  frontend-ci:
+    name: Frontend (React TypeScript) CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: QE190010_PRN232_Ass1_FE/package-lock.json
+
+      - name: Install dependencies
+        working-directory: QE190010_PRN232_Ass1_FE
+        run: npm ci
+
+      - name: Lint frontend code
+        working-directory: QE190010_PRN232_Ass1_FE
+        run: npm run lint
+
+      - name: Build frontend app
+        working-directory: QE190010_PRN232_Ass1_FE
+        run: npm run build
