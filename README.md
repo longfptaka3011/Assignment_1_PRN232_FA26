@@ -1,6 +1,6 @@
 # TaskTrack — Task & Team Management System
 
-[![Continuous Integration](https://github.com/longfptaka3011/ASM1_PRN232_FA26/actions/workflows/ci.yml/badge.svg)](https://github.com/longfptaka3011/ASM1_PRN232_FA26/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/longfptaka3011/Assignment_1_PRN232_FA26/actions/workflows/ci.yml/badge.svg)](https://github.com/longfptaka3011/Assignment_1_PRN232_FA26/actions/workflows/ci.yml)
 [![.NET Version](https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![React Version](https://img.shields.io/badge/React-19.0-61DAFB?style=flat&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
@@ -18,10 +18,10 @@
 
 | Resource | URL | Description |
 | :--- | :--- | :--- |
-| 🚀 **Web Application (Frontend)** | [https://qe190010-prn232-ass1-fe.vercel.app](https://qe190010-prn232-ass1-fe.vercel.app) | Responsive React 19 SPA deployed on Vercel |
-| ⚡ **RESTful API Service** | [https://qe190010-prn232-ass1-be.onrender.com](https://qe190010-prn232-ass1-be.onrender.com) | ASP.NET Core 10 Web API hosted on Render Docker container |
-| 📖 **Swagger / OpenAPI UI** | [https://qe190010-prn232-ass1-be.onrender.com/swagger](https://qe190010-prn232-ass1-be.onrender.com/swagger) | Interactive API exploration and testing interface |
-| 🐙 **Source Code (GitHub)** | [https://github.com/longfptaka3011/ASM1_PRN232_FA26](https://github.com/longfptaka3011/ASM1_PRN232_FA26) | Full-stack monorepo with CI/CD workflows |
+| 🚀 **Web Application (Frontend)** | [https://assignment-1-prn-232-fa-26.vercel.app](https://assignment-1-prn-232-fa-26.vercel.app) | Responsive React 19 SPA deployed on Vercel |
+| ⚡ **RESTful API Service** | [https://assignment-1-prn232-fa26.onrender.com](https://assignment-1-prn232-fa26.onrender.com) | ASP.NET Core 10 Web API hosted on Render Docker container |
+| 📖 **Swagger / OpenAPI UI** | [https://assignment-1-prn232-fa26.onrender.com/swagger](https://assignment-1-prn232-fa26.onrender.com/swagger) | Interactive API exploration and testing interface |
+| 🐙 **Source Code (GitHub)** | [https://github.com/longfptaka3011/Assignment_1_PRN232_FA26](https://github.com/longfptaka3011/Assignment_1_PRN232_FA26) | Full-stack monorepo with CI/CD workflows |
 
 ---
 
@@ -451,7 +451,7 @@ flowchart LR
 ### 2. Frontend on Vercel (Edge SPA)
 - **Build Engine**: `npm run build` producing optimized static bundles in `dist/`.
 - **Client Routing**: Configured with `vercel.json` rewrite rule to route all paths to `index.html`.
-- **API Proxy/Env**: `VITE_API_URL=https://qe190010-prn232-ass1-be.onrender.com/api`.
+- **API Proxy/Env**: `VITE_API_URL=https://assignment-1-prn232-fa26.onrender.com/api`.
 
 ---
 

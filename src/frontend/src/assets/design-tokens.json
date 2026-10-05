@@ -1,0 +1,542 @@
+{
+  "name": "TaskTrack Design System",
+  "version": "2.0.0",
+  "description": "Neo Dark theme design tokens for TaskTrack application",
+  
+  "primitive": {
+    "colors": {
+      "cyan": {
+        "50": "#e6fffb",
+        "100": "#b3fff5",
+        "200": "#80ffef",
+        "300": "#4dffe9",
+        "400": "#1affe3",
+        "500": "#00f5d4",
+        "600": "#00d4b8",
+        "700": "#00b39c",
+        "800": "#009280",
+        "900": "#007164"
+      },
+      "purple": {
+        "50": "#f5e6ff",
+        "100": "#e6c2ff",
+        "200": "#d699ff",
+        "300": "#c770ff",
+        "400": "#b64dff",
+        "500": "#bf5af2",
+        "600": "#a144de",
+        "700": "#8934c6",
+        "800": "#7124ae",
+        "900": "#59148f"
+      },
+      "pink": {
+        "50": "#ffe6f0",
+        "100": "#ffb3c9",
+        "200": "#ff80a3",
+        "300": "#ff4d7d",
+        "400": "#ff1a57",
+        "500": "#ff006e",
+        "600": "#de005c",
+        "700": "#b8004a",
+        "800": "#920038",
+        "900": "#6c0026"
+      },
+      "green": {
+        "50": "#e6fbe8",
+        "100": "#c2f5c6",
+        "200": "#99ee9f",
+        "300": "#70e878",
+        "400": "#4de157",
+        "500": "#30d158",
+        "600": "#22b344",
+        "700": "#1a9530",
+        "800": "#12771c",
+        "900": "#0a5908"
+      },
+      "orange": {
+        "50": "#fff5e6",
+        "100": "#ffe3b3",
+        "200": "#ffd180",
+        "300": "#ffbf4d",
+        "400": "#ffad1a",
+        "500": "#ff9500",
+        "600": "#de7c00",
+        "700": "#b86300",
+        "800": "#924a00",
+        "900": "#6c3100"
+      },
+      "blue": {
+        "50": "#e6f0ff",
+        "100": "#b3d1ff",
+        "200": "#80b3ff",
+        "300": "#4d94ff",
+        "400": "#1a75ff",
+        "500": "#3a86ff",
+        "600": "#2e6bde",
+        "700": "#2252b8",
+        "800": "#163992",
+        "900": "#0a206c"
+      },
+      "red": {
+        "50": "#ffe6e6",
+        "100": "#ffb3b3",
+        "200": "#ff8080",
+        "300": "#ff4d4d",
+        "400": "#ff1a1a",
+        "500": "#ff453a",
+        "600": "#de2c22",
+        "700": "#b8231a",
+        "800": "#921a12",
+        "900": "#6c110a"
+      },
+      "yellow": {
+        "50": "#fffde6",
+        "100": "#fff9b3",
+        "200": "#fff580",
+        "300": "#fff14d",
+        "400": "#ffed1a",
+        "500": "#ffd60a",
+        "600": "#debb00",
+        "700": "#b89f00",
+        "800": "#928300",
+        "900": "#6c6700"
+      },
+      "gray": {
+        "50": "#fafafa",
+        "100": "#f4f4f5",
+        "200": "#e4e4e7",
+        "300": "#d4d4d8",
+        "400": "#a1a1aa",
+        "500": "#71717a",
+        "600": "#52525b",
+        "700": "#3f3f46",
+        "800": "#27272a",
+        "900": "#18181b",
+        "950": "#09090b"
+      }
+    },
+    "spacing": {
+      "0": "0px",
+      "1": "4px",
+      "2": "8px",
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "10": "40px",
+      "12": "48px",
+      "16": "64px",
+      "20": "80px",
+      "24": "96px"
+    },
+    "radius": {
+      "none": "0px",
+      "sm": "6px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "16px",
+      "2xl": "20px",
+      "3xl": "24px",
+      "full": "9999px"
+    },
+    "shadow": {
+      "sm": "0 1px 2px rgba(0, 0, 0, 0.4)",
+      "md": "0 4px 16px rgba(0, 0, 0, 0.5)",
+      "lg": "0 8px 24px rgba(0, 0, 0, 0.55)",
+      "xl": "0 12px 40px rgba(0, 0, 0, 0.6)",
+      "2xl": "0 20px 50px rgba(0, 0, 0, 0.7)"
+    },
+    "fontFamily": {
+      "sans": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "mono": "'JetBrains Mono', 'SF Mono', Monaco, monospace"
+    },
+    "fontSize": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem"
+    },
+    "fontWeight": {
+      "light": "300",
+      "normal": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700",
+      "extrabold": "800"
+    },
+    "lineHeight": {
+      "none": "1",
+      "tight": "1.2",
+      "snug": "1.375",
+      "normal": "1.5",
+      "relaxed": "1.625",
+      "loose": "2"
+    },
+    "transition": {
+      "fast": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "base": "250ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "slow": "400ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "500ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+    "zIndex": {
+      "dropdown": "50",
+      "sticky": "100",
+      "fixed": "200",
+      "modalBackdrop": "300",
+      "modal": "400",
+      "popover": "500",
+      "tooltip": "600"
+    }
+  },
+
+  "semantic": {
+    "colors": {
+      "background": {
+        "primary": { "value": "#0a0a0f", "description": "Main page background" },
+        "secondary": { "value": "#12121a", "description": "Secondary background" },
+        "tertiary": { "value": "#1a1a25", "description": "Tertiary/cards background" },
+        "card": { "value": "#15151f", "description": "Card component background" },
+        "cardHover": { "value": "#1c1c28", "description": "Card hover state" },
+        "elevated": { "value": "#1f1f2e", "description": "Elevated surfaces" },
+        "glass": { "value": "rgba(26, 26, 37, 0.85)", "description": "Glass morphism effect" }
+      },
+      "foreground": {
+        "primary": { "value": "#ffffff", "description": "Primary text" },
+        "secondary": { "value": "#a1a1aa", "description": "Secondary text" },
+        "muted": { "value": "#71717a", "description": "Muted/disabled text" },
+        "dim": { "value": "#52525b", "description": "Dimmed text" }
+      },
+      "primary": {
+        "default": { "value": "#00f5d4", "description": "Primary brand color" },
+        "hover": { "value": "#1affe3", "description": "Primary hover state" },
+        "active": { "value": "#00d4b8", "description": "Primary active state" },
+        "muted": { "value": "rgba(0, 245, 212, 0.12)", "description": "Primary muted background" },
+        "glow": { "value": "rgba(0, 245, 212, 0.25)", "description": "Primary glow effect" }
+      },
+      "secondary": {
+        "default": { "value": "#bf5af2", "description": "Secondary brand color" },
+        "hover": { "value": "#c770ff", "description": "Secondary hover state" },
+        "active": { "value": "#a144de", "description": "Secondary active state" },
+        "muted": { "value": "rgba(191, 90, 242, 0.12)", "description": "Secondary muted background" }
+      },
+      "accent": {
+        "pink": { "value": "#ff006e", "description": "Pink accent" },
+        "blue": { "value": "#3a86ff", "description": "Blue accent" },
+        "green": { "value": "#30d158", "description": "Green accent" },
+        "orange": { "value": "#ff9500", "description": "Orange accent" },
+        "red": { "value": "#ff453a", "description": "Red accent" },
+        "yellow": { "value": "#ffd60a", "description": "Yellow accent" }
+      },
+      "border": {
+        "subtle": { "value": "rgba(255, 255, 255, 0.06)", "description": "Subtle border" },
+        "light": { "value": "rgba(255, 255, 255, 0.1)", "description": "Light border" },
+        "medium": { "value": "rgba(255, 255, 255, 0.15)", "description": "Medium border" },
+        "strong": { "value": "rgba(255, 255, 255, 0.2)", "description": "Strong border" }
+      },
+      "status": {
+        "success": { "value": "#30d158", "description": "Success state" },
+        "warning": { "value": "#ffd60a", "description": "Warning state" },
+        "error": { "value": "#ff453a", "description": "Error state" },
+        "info": { "value": "#3a86ff", "description": "Info state" }
+      }
+    },
+    "shadow": {
+      "sm": { "value": "0 1px 2px rgba(0, 0, 0, 0.4)", "description": "Small shadow" },
+      "md": { "value": "0 4px 16px rgba(0, 0, 0, 0.5)", "description": "Medium shadow" },
+      "lg": { "value": "0 8px 24px rgba(0, 0, 0, 0.55)", "description": "Large shadow" },
+      "xl": { "value": "0 12px 40px rgba(0, 0, 0, 0.6)", "description": "Extra large shadow" },
+      "2xl": { "value": "0 20px 50px rgba(0, 0, 0, 0.7)", "description": "2x Extra large shadow" },
+      "glowCyan": { "value": "0 0 25px rgba(0, 245, 212, 0.3)", "description": "Cyan glow shadow" },
+      "glowPurple": { "value": "0 0 25px rgba(191, 90, 242, 0.3)", "description": "Purple glow shadow" },
+      "glowPink": { "value": "0 0 25px rgba(255, 0, 110, 0.3)", "description": "Pink glow shadow" },
+      "glowGreen": { "value": "0 0 25px rgba(48, 209, 88, 0.3)", "description": "Green glow shadow" },
+      "glowOrange": { "value": "0 0 25px rgba(255, 149, 0, 0.3)", "description": "Orange glow shadow" },
+      "glowBlue": { "value": "0 0 25px rgba(58, 134, 255, 0.3)", "description": "Blue glow shadow" }
+    },
+    "radius": {
+      "sm": { "value": "6px", "description": "Small radius" },
+      "md": { "value": "8px", "description": "Medium radius" },
+      "lg": { "value": "12px", "description": "Large radius" },
+      "xl": { "value": "16px", "description": "Extra large radius" },
+      "2xl": { "value": "20px", "description": "2x Extra large radius" },
+      "3xl": { "value": "24px", "description": "3x Extra large radius" },
+      "full": { "value": "9999px", "description": "Full radius (pill shape)" }
+    },
+    "spacing": {
+      "0": { "value": "0px", "description": "No spacing" },
+      "1": { "value": "4px", "description": "1 unit spacing" },
+      "2": { "value": "8px", "description": "2 units spacing" },
+      "3": { "value": "12px", "description": "3 units spacing" },
+      "4": { "value": "16px", "description": "4 units spacing" },
+      "5": { "value": "20px", "description": "5 units spacing" },
+      "6": { "value": "24px", "description": "6 units spacing" },
+      "8": { "value": "32px", "description": "8 units spacing" },
+      "10": { "value": "40px", "description": "10 units spacing" },
+      "12": { "value": "48px", "description": "12 units spacing" },
+      "16": { "value": "64px", "description": "16 units spacing" }
+    }
+  },
+
+  "component": {
+    "button": {
+      "primary": {
+        "background": "linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)",
+        "color": "#0a0a0f",
+        "shadow": "0 0 25px rgba(0, 245, 212, 0.3)",
+        "shadowHover": "0 8px 30px rgba(0, 245, 212, 0.4)",
+        "shadowActive": "0 4px 15px rgba(0, 245, 212, 0.3)"
+      },
+      "secondary": {
+        "background": "#1a1a25",
+        "color": "#a1a1aa",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "shadowHover": "inset 0 0 15px rgba(0, 245, 212, 0.1)"
+      },
+      "danger": {
+        "background": "linear-gradient(135deg, var(--accent-red) 0%, var(--accent-pink) 100%)",
+        "color": "#ffffff",
+        "shadowHover": "0 8px 30px rgba(255, 69, 58, 0.4)"
+      },
+      "ghost": {
+        "background": "transparent",
+        "color": "#a1a1aa",
+        "shadowHover": "background: rgba(255, 255, 255, 0.05)"
+      },
+      "icon": {
+        "size": "40px",
+        "radius": "12px"
+      },
+      "padding": {
+        "sm": "8px 14px",
+        "md": "12px 24px",
+        "lg": "16px 32px"
+      },
+      "fontSize": {
+        "sm": "0.8rem",
+        "md": "0.9rem",
+        "lg": "1rem"
+      },
+      "transition": "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+    "card": {
+      "background": "#15151f",
+      "border": "1px solid rgba(255, 255, 255, 0.06)",
+      "radius": "20px",
+      "shadow": "0 4px 16px rgba(0, 0, 0, 0.5)",
+      "shadowHover": "0 8px 24px rgba(0, 0, 0, 0.55), 0 0 30px rgba(0, 245, 212, 0.12)",
+      "padding": "24px",
+      "transition": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "input": {
+      "background": "#1a1a25",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "borderFocus": "1px solid #00f5d4",
+      "shadowFocus": "0 0 0 4px rgba(0, 245, 212, 0.12)",
+      "radius": "12px",
+      "padding": "14px 18px",
+      "fontSize": "0.95rem",
+      "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "badge": {
+      "radius": "9999px",
+      "padding": "6px 14px",
+      "fontSize": "0.75rem",
+      "fontWeight": "600",
+      "transition": "all 0.2s ease"
+    },
+    "modal": {
+      "background": "#15151f",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "radius": "24px",
+      "shadow": "0 20px 50px rgba(0, 0, 0, 0.7), 0 0 50px rgba(0, 245, 212, 0.12)",
+      "backdrop": "rgba(0, 0, 0, 0.7)",
+      "blur": "8px",
+      "animation": "scaleIn 0.3s ease-out"
+    },
+    "sidebar": {
+      "width": "80px",
+      "widthExpanded": "280px",
+      "background": "linear-gradient(180deg, #0d0d14 0%, #15151f 100%)",
+      "border": "1px solid rgba(255, 255, 255, 0.06)",
+      "transition": "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "table": {
+      "background": "#15151f",
+      "border": "1px solid rgba(255, 255, 255, 0.06)",
+      "radius": "20px",
+      "headerBackground": "#1a1a25",
+      "headerColor": "#71717a",
+      "rowHover": "#1c1c28",
+      "cellPadding": "18px 20px"
+    },
+    "taskCard": {
+      "background": "#15151f",
+      "border": "1px solid rgba(255, 255, 255, 0.06)",
+      "radius": "16px",
+      "padding": "24px",
+      "gap": "16px",
+      "headerBorder": "3px solid",
+      "shadowHover": "0 8px 24px rgba(0, 0, 0, 0.55), 0 0 30px rgba(0, 245, 212, 0.12)"
+    },
+    "chart": {
+      "lineColor": "#00f5d4",
+      "lineGlow": "url(#glow)",
+      "areaGradient": "linear-gradient(180deg, rgba(0, 245, 212, 0.3) 0%, rgba(0, 245, 212, 0) 100%)",
+      "gridColor": "#27272a",
+      "gridDash": "4,4",
+      "pointColor": "#00f5d4",
+      "pointRadius": "4px"
+    },
+    "donutChart": {
+      "radius": "70px",
+      "strokeWidth": "24px",
+      "completedColor": "#30d158",
+      "inProgressColor": "#00f5d4",
+      "pendingColor": "#ff9500",
+      "backgroundColor": "#27272a"
+    }
+  },
+
+  "animations": {
+    "fadeIn": {
+      "name": "fadeIn",
+      "duration": "250ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "properties": ["opacity"]
+    },
+    "fadeInUp": {
+      "name": "fadeInUp",
+      "duration": "400ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "properties": ["opacity", "transform"]
+    },
+    "scaleIn": {
+      "name": "scaleIn",
+      "duration": "250ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "properties": ["opacity", "transform"]
+    },
+    "slideInLeft": {
+      "name": "slideInLeft",
+      "duration": "400ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "properties": ["opacity", "transform"]
+    },
+    "bounce": {
+      "name": "bounce",
+      "duration": "500ms",
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "properties": ["transform"]
+    },
+    "pulse": {
+      "name": "pulse",
+      "duration": "2s",
+      "easing": "ease-in-out",
+      "properties": ["opacity"]
+    },
+    "glow": {
+      "name": "glow",
+      "duration": "2s",
+      "easing": "ease-in-out",
+      "properties": ["box-shadow"]
+    },
+    "float": {
+      "name": "float",
+      "duration": "3s",
+      "easing": "ease-in-out",
+      "properties": ["transform"]
+    },
+    "shimmer": {
+      "name": "shimmer",
+      "duration": "1.5s",
+      "easing": "linear",
+      "properties": ["background-position"]
+    }
+  },
+
+  "microInteractions": {
+    "hoverScale": {
+      "scale": "1.02",
+      "transition": "200ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+    "hoverLift": {
+      "translateY": "-4px",
+      "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "hoverGlow": {
+      "shadow": "0 0 25px rgba(0, 245, 212, 0.3)",
+      "transition": "300ms ease"
+    },
+    "clickScale": {
+      "scale": "0.98",
+      "transition": "100ms ease"
+    },
+    "focusRing": {
+      "outline": "2px solid #00f5d4",
+      "offset": "2px",
+      "radius": "6px"
+    },
+    "ripple": {
+      "duration": "500ms",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+
+  "typography": {
+    "display": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "2.25rem",
+      "fontWeight": "700",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.02em"
+    },
+    "h1": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "1.875rem",
+      "fontWeight": "600",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.02em"
+    },
+    "h2": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "1.5rem",
+      "fontWeight": "600",
+      "lineHeight": "1.2",
+      "letterSpacing": "-0.02em"
+    },
+    "h3": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "1.25rem",
+      "fontWeight": "600",
+      "lineHeight": "1.2"
+    },
+    "body": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "1rem",
+      "fontWeight": "400",
+      "lineHeight": "1.6"
+    },
+    "small": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "0.875rem",
+      "fontWeight": "400",
+      "lineHeight": "1.5"
+    },
+    "caption": {
+      "fontFamily": "'Inter', sans-serif",
+      "fontSize": "0.75rem",
+      "fontWeight": "500",
+      "lineHeight": "1.4",
+      "letterSpacing": "0.02em"
+    },
+    "code": {
+      "fontFamily": "'JetBrains Mono', monospace",
+      "fontSize": "0.875em"
+    }
+  }
+}
