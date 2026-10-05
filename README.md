@@ -1,6 +1,6 @@
 # TaskTrack — Task & Team Management System
 
-[![Continuous Integration](https://github.com/longfptaka3011/Assignment-1_PRN232_Fa26/actions/workflows/ci.yml/badge.svg)](https://github.com/longfptaka3011/Assignment-1_PRN232_Fa26/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/longfptaka3011/ASM1_PRN232_FA26/actions/workflows/ci.yml/badge.svg)](https://github.com/longfptaka3011/ASM1_PRN232_FA26/actions/workflows/ci.yml)
 [![.NET Version](https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![React Version](https://img.shields.io/badge/React-19.0-61DAFB?style=flat&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
@@ -21,7 +21,7 @@
 | 🚀 **Web Application (Frontend)** | [https://qe190010-prn232-ass1-fe.vercel.app](https://qe190010-prn232-ass1-fe.vercel.app) | Responsive React 19 SPA deployed on Vercel |
 | ⚡ **RESTful API Service** | [https://qe190010-prn232-ass1-be.onrender.com](https://qe190010-prn232-ass1-be.onrender.com) | ASP.NET Core 10 Web API hosted on Render Docker container |
 | 📖 **Swagger / OpenAPI UI** | [https://qe190010-prn232-ass1-be.onrender.com/swagger](https://qe190010-prn232-ass1-be.onrender.com/swagger) | Interactive API exploration and testing interface |
-| 🐙 **Source Code (GitHub)** | [https://github.com/longfptaka3011/Assignment-1_PRN232_Fa26](https://github.com/longfptaka3011/Assignment-1_PRN232_Fa26) | Full-stack monorepo with CI/CD workflows |
+| 🐙 **Source Code (GitHub)** | [https://github.com/longfptaka3011/ASM1_PRN232_FA26](https://github.com/longfptaka3011/ASM1_PRN232_FA26) | Full-stack monorepo with CI/CD workflows |
 
 ---
 
