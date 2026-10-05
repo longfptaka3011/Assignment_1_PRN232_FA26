@@ -51,7 +51,8 @@ if (!string.IsNullOrEmpty(connectionString) && (connectionString.StartsWith("pos
         Username = userInfo.Length > 0 ? userInfo[0] : "",
         Password = userInfo.Length > 1 ? userInfo[1] : "",
         Database = uri.AbsolutePath.TrimStart('/'),
-        SslMode = SslMode.Require
+        SslMode = SslMode.Require,
+        TrustServerCertificate = true
     };
     connectionString = npgsqlBuilder.ToString();
 }
@@ -68,7 +69,8 @@ else
             Username = Environment.GetEnvironmentVariable("DATABASE_USERNAME") ?? "",
             Password = Environment.GetEnvironmentVariable("DATABASE_PASSWORD") ?? "",
             Database = Environment.GetEnvironmentVariable("DATABASE_NAME") ?? "postgres",
-            SslMode = SslMode.Require
+            SslMode = SslMode.Require,
+            TrustServerCertificate = true
         };
         connectionString = npgsqlBuilder.ToString();
     }
